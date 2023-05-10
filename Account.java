@@ -5,7 +5,7 @@ public class Account {
     private String name;
     private double balance;
 
-    public Account (int number,String name,double balance){
+    public Account (int number, String name, double balance){
         this.name = name;
         this.number = number;
         this.balance = balance;

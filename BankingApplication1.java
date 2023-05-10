@@ -17,9 +17,9 @@ public class BankingApplication1 {
     public static void main(String[] args) {
         int option = 0, number;
         String name;
-        double balance;
+        double balance , amount;
         Bank bank = new Bank();
-        Account account;
+        Account account ;
         Scanner scan = new Scanner(System.in);
         while (option != 6) {
             System.out.println("Main Menu");
@@ -35,7 +35,7 @@ public class BankingApplication1 {
             scan.nextLine();
             switch (option) {
                 case 1:
-                    System.out.println("Hello");
+                    bank.listAccount();
                     break;
                 case 2:
                     System.out.print("Enter Account Name: ");
@@ -46,6 +46,26 @@ public class BankingApplication1 {
                     account = new Account(number, name, balance);
                     bank.openAccount(account);
                     break;
+                case 3:
+                    System.out.print("Enter Account Number: ");
+                    number = scan.nextInt();
+                    bank.closeAccount(number);
+                    break;
+                case 4:
+                    System.out.println("Enter amount : ");
+                    amount = scan.nextDouble();
+                    System.out.print("Enter Account Number: ");
+                    number = scan.nextInt();
+                    bank.depositMoney(number,amount);
+                    break;
+                case 5 :
+                    System.out.println("Enter amount : ");
+                    amount = scan.nextDouble();
+                    System.out.print("Enter Account Number: ");
+                    number = scan.nextInt();
+                    bank.withdrawMoney(number,amount);
+                    break;
+
             }
             System.out.println();
         }
